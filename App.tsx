@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler' 
 import React from 'react';
 import { NativeBaseProvider, Box, Text } from "native-base";
 import BottomTabs from './components/bottom-tabs';

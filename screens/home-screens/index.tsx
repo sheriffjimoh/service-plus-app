@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import HomeHeader from '../../components/home-header';
 import SearchBar from '../../components/search-bar';
 import Location from '../../components/location';
+import Slides from '../../components/slide';
 export default function HomeScreen() {
   const navigation = useNavigation();
 
@@ -13,6 +14,7 @@ export default function HomeScreen() {
       <Box mt="5">
         <SearchBar />
         <Location />
+        <Slides />
       </Box>
      
  </Box>
