@@ -5,6 +5,8 @@ import HomeHeader from '../../components/home-header';
 import SearchBar from '../../components/search-bar';
 import Location from '../../components/location';
 import Slides from '../../components/slide';
+import Categories from '../../components/categories';
+import { ScrollView } from 'react-native';
 export default function HomeScreen() {
   const navigation = useNavigation();
 
@@ -14,8 +16,12 @@ export default function HomeScreen() {
       <Box mt="5">
         <SearchBar />
         <Location />
-        <Slides />
       </Box>
+      <ScrollView> 
+
+      <Slides />
+        <Categories />
+        </ScrollView>
      
  </Box>
   );

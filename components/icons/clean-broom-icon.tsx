@@ -20,11 +20,7 @@ export default function CleanBroomIcon({ size }: any) {
         <Path d="M8.25 20.25V22.5" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <Path d="M15.75 21.75V22.5" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         </G>
-        <defs>
-        <clipPath id="clip0_1_162">
-        <rect width="24" height="24" fill="white"/>
-        </clipPath>
-        </defs>
+      
 
       </Svg>
     </View>
