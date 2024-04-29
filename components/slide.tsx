@@ -8,11 +8,10 @@ import { ImageBackground } from "react-native";
 
 function Index() {
   const width = Dimensions.get("window").width;
-  const carouselRef = React.useRef(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const renderDots = () => {
-    return new Array(2).fill(null).map((_, index) => (
+    return new Array(4).fill(null).map((_, index) => (
       <View key={index} style={[styles.dot, index === currentIndex && styles.activeDot]} />
     ));
   };
@@ -56,7 +55,7 @@ function Index() {
           width={330}
           height={width / 2}
           autoPlay={false}
-          data={[...new Array(2).keys()]}
+          data={[...new Array(4).keys()]}
           scrollAnimationDuration={1000}
           onSnapToItem={(index) => setCurrentIndex(index)}
           renderItem={({ index }) => <Item index={index} />}
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
     height: 5,
     borderRadius: 5,
     backgroundColor: '#ccc',
-    marginHorizontal: 5,
+    marginHorizontal: 2,
   },
   activeDot: {
     width: 15,
