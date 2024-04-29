@@ -12,7 +12,7 @@ export default function HomeHeader() {
                 <Image source={require("../assets/profile.jpeg")} alt="profile"  style={{ width: 42, height: 42 }} /> 
                 </Box>
                 <Box>
-                    <Text fontSize="sm">Good Morning</Text>
+                    <Text fontSize="sm">Good Morning 👋🏿</Text>
                     <Text fontSize="lg" fontWeight="400">Chaitanya Goyal</Text>
                 </Box>
             </Stack>

@@ -5,7 +5,7 @@ import Svg, { Path } from 'react-native-svg';
 
 export default function HomeIcon({ size, isFocused}: any) {
 
-    console.log({ isFocused })
+    {}
     return (
         <View>
         <Svg

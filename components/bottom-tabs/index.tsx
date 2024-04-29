@@ -26,7 +26,7 @@ export default function MyTabs() {
               style={{ justifyContent:"space-between", flex: 1, alignItems: "center"}}
             >
               <View>
-                {options.tabBarIcon({ color: isFocused ? "black" : "gray", size: 24 })}
+                {options.tabBarIcon({ color: isFocused ? "black" : "gray", size: 24, focused: isFocused })}
               </View>
               <Text style={{ color: isFocused ? "black" : "gray" }}>{label}</Text>
               {isFocused && <View style={{ width: 8, height: 8, backgroundColor: "black", borderRadius: 5, marginTop: 3 }} />}
@@ -42,7 +42,7 @@ export default function MyTabs() {
       <Tab.Screen
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: ({ size, focused }) => <HomeIcon size={size}  isFocused={focused} />,
+          tabBarIcon: ({ size,  focused }) => <HomeIcon size={size}  isFocused={focused} />,
           headerShown: false,
         }}
         name="Home"
@@ -52,7 +52,7 @@ export default function MyTabs() {
       <Tab.Screen
         options={{
           tabBarLabel: "Bookings",
-          tabBarIcon: ({ color, size }) => <BookingIcon size={size} color={color} />,
+          tabBarIcon: ({  size, focused }) => <BookingIcon size={size} isFocused={focused} />,
         }}
         name="Bookings"
         component={BookmarkScreen}
@@ -60,7 +60,7 @@ export default function MyTabs() {
       <Tab.Screen
         options={{
           tabBarLabel: "Messages",
-          tabBarIcon: ({ color, size }) => <MessageIcon size={size} color={color} />,
+          tabBarIcon: ({  size , focused}) => <MessageIcon size={size} isFocused={focused}/>,
         }}
         name="Messages"
         component={BookmarkScreen}
@@ -68,7 +68,7 @@ export default function MyTabs() {
       <Tab.Screen
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => <ProfileIcon size={size} color={color} />,
+          tabBarIcon: ({  size, focused}) => <ProfileIcon size={size} isFocused={focused}/>,
         }}
         name="Profile"
         component={BookmarkScreen}
