@@ -1,8 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TouchableOpacity, Text, View } from "react-native";
-import HomeScreen from "../../screens/home-screens";
-import BookmarkScreen from "../../screens/bookmark-screens";
+import HomeScreen from "../../screens/home";
+import BookmarkScreen from "../../screens/bookmark";
+import MessageScreen from "../../screens/message";
+import ProfileScreen from "../../screens/profile";
+import BookingScreen from "../../screens/booking";
 import HomeIcon from "./bottom-tab-icons/home-icon";
 import BookingIcon from "./bottom-tab-icons/booking-icon";
 import MessageIcon from "./bottom-tab-icons/message-icon";
@@ -45,7 +48,7 @@ export default function MyTabs() {
           tabBarIcon: ({ size,  focused }) => <HomeIcon size={size}  isFocused={focused} />,
           headerShown: false,
         }}
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
       />
 
@@ -55,7 +58,7 @@ export default function MyTabs() {
           tabBarIcon: ({  size, focused }) => <BookingIcon size={size} isFocused={focused} />,
         }}
         name="Bookings"
-        component={BookmarkScreen}
+        component={BookingScreen}
       />
       <Tab.Screen
         options={{
@@ -63,7 +66,7 @@ export default function MyTabs() {
           tabBarIcon: ({  size , focused}) => <MessageIcon size={size} isFocused={focused}/>,
         }}
         name="Messages"
-        component={BookmarkScreen}
+        component={MessageScreen}
       />
       <Tab.Screen
         options={{
@@ -71,7 +74,7 @@ export default function MyTabs() {
           tabBarIcon: ({  size, focused}) => <ProfileIcon size={size} isFocused={focused}/>,
         }}
         name="Profile"
-        component={BookmarkScreen}
+        component={ProfileScreen}
       />
     </Tab.Navigator>
   );

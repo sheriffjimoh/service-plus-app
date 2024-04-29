@@ -2,7 +2,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../components/bottom-tabs';
-import BookmarkScreen from '../screens/bookmark-screens';
+import BookmarkScreen from '../screens/bookmark';
 
 const Stack = createStackNavigator();
 export default function MainStack() {

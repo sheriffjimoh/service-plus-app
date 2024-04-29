@@ -8,7 +8,7 @@ import { useStateContext } from '../../context/StateContext';
 import { services } from "../../utils"
 
 
-export default function BookmarkScreen() {
+export default function Bookmark() {
   
     const { serviceData } = useStateContext();
     return (
