@@ -2,7 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
-export default function BookmarkIcon({ size }: any) {
+export default function BookmarkIcon({ size, isFocused }: any) {
+
+  // console.log("isFocused", isFocused);
   return (
     <View>
       <Svg
@@ -17,7 +19,7 @@ export default function BookmarkIcon({ size }: any) {
           stroke="#545454" 
           stroke-width="1.5"
           stroke-linecap="round"
-          fill="none"
+          fill={isFocused ? "black" : "none"}
         />
       </Svg>
     </View>

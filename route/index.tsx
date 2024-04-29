@@ -7,14 +7,13 @@ import BookmarkScreen from '../screens/bookmark-screens';
 const Stack = createStackNavigator();
 export default function MainStack() {
   return (
-
-    // dont show header 
-    
-    <Stack.Navigator screenOptions={{
-        headerShown: false
-    }} initialRouteName="Home" >
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen  name="Bookmarks" component={BookmarkScreen} />
-    </Stack.Navigator>
+   
+        <Stack.Navigator screenOptions={{
+            headerShown: false
+        }} initialRouteName="Home" >
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen  name="Bookmarks" component={BookmarkScreen} />
+        </Stack.Navigator>
+   
   );
 }

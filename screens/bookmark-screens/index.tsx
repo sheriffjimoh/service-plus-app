@@ -1,26 +1,23 @@
 import React from 'react';
-import { NativeBaseProvider, Box, Stack,} from "native-base";
-import { useNavigation } from '@react-navigation/native';
-import SectionHeader from '../../components/section-header';
+import {  Box, Stack,} from "native-base";
 import { ScrollView } from 'react-native';
-import services from '../../services.json';
 import CustomButton from '../../components/custome-button';
 import ServiceCard from '../../components/service-card';
 import ScreenHeader from '../../components/screen-header';
+import { useStateContext } from '../../context/StateContext';
+import { services } from "../../utils"
+
 
 export default function BookmarkScreen() {
-  const navigation = useNavigation();
-
- 
-    const data = [ "All","Cleaning","Repairing","Painting", "Laundry", "Appliance", "Plumbing", "Movers", "Saloon"];
-
+  
+    const { serviceData } = useStateContext();
     return (
         <Box py="5" bg="white" px="5" height="full">
           <ScreenHeader title="My  BookMark" />
         <Box>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <Stack direction="row" space={4} >
-            {data.map((item, index) => (
+            {services.map((item, index) => (
                 <CustomButton key={index}  isActive={item =="All"} text={item} onPress={() => console.info('pressed')} />
             ))}
              </Stack>
@@ -31,7 +28,7 @@ export default function BookmarkScreen() {
        <ScrollView showsVerticalScrollIndicator={false}>
       
         <Stack space={4} mt="4"  height="full">
-            {services.map((service, index) => (
+            {serviceData?.map((service: { imageSource: any; cleanerName: any; service: any; price: any; rating: any; reviews: any; }, index: any) => (
                 <ServiceCard
                     key={index}
                     imageSource={service.imageSource}

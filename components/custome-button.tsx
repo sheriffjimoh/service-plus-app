@@ -4,8 +4,6 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 const CustomButton = ({ onPress, text,isActive }: any) => {
   const [isPressed, setIsPressed] = useState(isActive ? isActive : false);
 
-  console.log({ isPressed })
-
   const handlePressIn = () => {
     setIsPressed(true);
   };

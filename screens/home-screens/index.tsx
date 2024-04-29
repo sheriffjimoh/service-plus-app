@@ -11,8 +11,7 @@ import Recommendation from "../../components/recommendation";
 import ExploreService from "../../components/explore-services";
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
-
+ 
   return (
     <Box bg="#fff" height={"full"} mt={5} px={5}>
       <HomeHeader />

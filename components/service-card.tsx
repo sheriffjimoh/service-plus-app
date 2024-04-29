@@ -1,8 +1,18 @@
 import React from "react";
 import { Image, Pressable } from "react-native";
-import { Box, Text, Stack, Button } from "native-base";
+import { Box, Text, Stack } from "native-base";
 import StarIcon from "./icons/star-icon";
 import BookmarkIcon from "./icons/bookmark-icon";
+
+import { useStateContext } from '../context/StateContext';
+type CustomCardProps = {
+  imageSource: string;
+  cleanerName: string;
+  service: string;
+  price: number;
+  rating: number;
+  reviews: number;
+};
 const CustomCard = ({
   imageSource,
   cleanerName,
@@ -10,7 +20,25 @@ const CustomCard = ({
   price,
   rating,
   reviews,
-}: any) => {
+}: CustomCardProps) => {
+
+  const { serviceData, updateServiceData } = useStateContext();
+
+  const data = {
+    id:  Math.random().toString(36).substr(2, 9),
+    imageSource,
+    cleanerName,
+    service,
+    price,
+    rating,
+    reviews,
+  }
+
+  const isBookmarked = serviceData?.find((item: { cleanerName: string, service: string }) => item.cleanerName === data.cleanerName && item.service === data.service);
+  const handleBookmarkClick = () => {
+    updateServiceData(data);
+  };
+
   return (
     <Box  shadow={0} borderRadius={16} backgroundColor="white" mx="1" padding={4}>
       <Stack direction="row" overflow="hidden">
@@ -43,7 +71,7 @@ const CustomCard = ({
           </Box>
         </Stack>
         <Box flexDirection="row" justifyContent="flex-end" width={16}>
-            <Pressable onPress={()=> console.info('saved')}><BookmarkIcon size={24} /></Pressable>
+            <Pressable onPress={()=> handleBookmarkClick()}><BookmarkIcon size={24} isFocused={isBookmarked ? true : false} /></Pressable>
             
         </Box>
       </Stack>
