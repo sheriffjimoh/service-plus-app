@@ -2,7 +2,6 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TouchableOpacity, Text, View } from "react-native";
 import HomeScreen from "../../screens/home";
-import BookmarkScreen from "../../screens/bookmark";
 import MessageScreen from "../../screens/message";
 import ProfileScreen from "../../screens/profile";
 import BookingScreen from "../../screens/booking";
